@@ -1,0 +1,109 @@
+@import "./variables.scss";
+
+.listing-card {
+  position: relative;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    @include shadow;
+  }
+
+  .slider-container {
+    width: 18.75rem;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+
+    .slide {
+      position: relative;
+      flex: 0 0 100%;
+      width: 100%;
+      height: 16.875rem;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(80%);
+      }
+
+      .prev-button,
+      .next-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0.5rem;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #ffffff;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      .prev-button {
+        left: 1rem;
+      }
+
+      .next-button {
+        right: 1rem;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #333333;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #666666;
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #000000;
+  }
+
+  .favorite {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ff6f61;
+    z-index: 999;
+    background: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ff3d3d;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.navbar {
+  padding: 0px 60px;
+  margin-top: -18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  @include sm {
+    padding: 15px 20px;
+  }
+
+  img {
+    width: 250px;
+    cursor: pointer;
+  }
+
+  &_search {
+    background-color: #ffffff;
+    border: 1px solid $grey;
+    border-radius: 30px;
+    height: 45px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+
+    input {
+      border: none;
+      outline: none;
+      width: 100%;
+      padding: 10px;
+      border-radius: 30px;
+      font-size: 16px;
+      color: $darkgrey;
+    }
+
+    &:hover {
+      @include shadow;
+    }
+
+    @include lg {
+      display: none;
+    }
+  }
+
+  &_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .host {
+      text-decoration: none;
+      color: $blue;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 25px;
+      transition: color 0.3s ease;
+      color: #cb6ce6;
+
+      &:hover {
+        color: $pinkred;
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+
+    &_account {
+      height: 45px;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      border: 1px solid $grey;
+      border-radius: 30px;
+      background-color: #ffffff;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png";
+
+      &:hover {
+        @include shadow;
+      }
+
+      img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+      }
+    }
+
+    &_accountmenu {
+      position: absolute;
+      background-color: #ffffff;
+      right: 60px;
+      top: 70px;
+      display: flex;
+      flex-direction: column;
+      width: 220px;
+      padding: 10px 0;
+      border: 1px solid $lightgrey;
+      border-radius: 10px;
+      @include shadow;
+      z-index: 9999;
+
+      @include sm {
+        right: 20px;
+      }
+
+      a {
+        width: 100%;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: $blue;
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.3s ease, background-color 0.3s ease;
+
+        &:hover {
+          color: $pinkred;
+          background-color: rgba(217, 213, 213, 0.1);
+        }
+      }
+    }
+  }
+}

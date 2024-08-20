@@ -1,0 +1,88 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.earth {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #4a90e2 30%, #003d66 90%);
+  border: 4px solid #3498db;
+  border-top: 4px solid transparent;
+  animation: spin 2s linear infinite;
+
+  .whirlpool {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    border-top: 4px solid #3498db;
+    animation: whirlpool 1.5s linear infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cloud {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .cloud:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    top: 15%;
+    left: 15%;
+    animation: cloud 2s linear infinite;
+  }
+
+  .cloud:nth-child(3) {
+    width: 25px;
+    height: 25px;
+    bottom: 15%;
+    right: 15%;
+    animation: cloud 2.5s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes whirlpool {
+  0% {
+    transform: rotate(0deg) scale(1);
+    border-width: 4px;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    border-width: 6px;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    border-width: 4px;
+  }
+}
+
+@keyframes cloud {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.4;
+  }
+}
