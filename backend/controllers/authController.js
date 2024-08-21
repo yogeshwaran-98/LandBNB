@@ -19,13 +19,14 @@ const getUsers = async (req, res, next) => {
 
 const registerUser = async (req, res, next) => {
   try {
-    const { name, email, password } = req.body;
+    const { firstName, lastName , email, password } = req.body;
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const newUser = await Users.create({
-      name,
+      firstName,
+      lastName,
       email,
       password: hashedPassword,
     });
